@@ -37,7 +37,7 @@ This applet takes one file in as input that simply lists the VCFs to process, on
 ---
 ### Command line usage
 
-Strings that define inclusion criteria and fields to exclude should be consistent with bcftools  placed within quotes. See the [bcftools](https://samtools.github.io/bcftools/bcftools.html) manual for more information.
+Strings that define inclusion criteria and fields to exclude should be consistent with input expected by bcftools and placed within quotes. See the [bcftools](https://samtools.github.io/bcftools/bcftools.html) manual for more information.
 
 #### Example 1:
 Removing all fields within `FORMAT` except for `GT` and applying inclusion critera of an `AAscore` >= 0.5:
