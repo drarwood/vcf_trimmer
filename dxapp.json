@@ -1,0 +1,92 @@
+{
+  "name": "vcf_trimmer",
+  "title": "VCF Trimmer",
+  "summary": "Trims VCFs by removing unwanted INFO and FORMAT fields, splits multi-allelic sites, and applies filters to VCFs.",
+  "dxapi": "1.0.0",
+  "version": "0.0.1",
+  "inputSpec": [
+    {
+      "name": "vcf_file_list",
+      "label": "VCF file list",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*"
+      ],
+      "help": "File containing list of full VCF paths to process. One file per line."
+    },
+    {
+      "name": "file_label",
+      "label": "Label to add to file",
+      "class": "string",
+      "optional": true,
+      "default": "trimmed",
+      "help": "Label to insert into filename prior to .vcf.gz"
+    },
+    {
+      "name": "output_dir",
+      "label": "Output directory",
+      "class": "string",
+      "optional": true,
+      "default": "/",
+      "help": "Output directory for newly created VCFs"
+    },
+    {
+      "name": "qc_thresholds",
+      "label": "Comma separated list of metric thresholds to apply.",
+      "class": "string",
+      "optional": true,
+      "default": "INFO/AAScore>=0.5",
+      "help": "Comma separated list of quality control thresholds to apply. Format: Field/MetricComparisonThreshold. e.g. INFO/AAScore>=0.5"
+    },
+    {
+      "name": "fields_to_remove",
+      "label": "Comma separated list of fields to remove. Should not include fields used for QC thresholding",
+      "class": "string",
+      "optional": true,
+      "default": "FORMAT/FT,FORMAT/AD,FORMAT/MD,FORMAT/DP,FORMAT/RA,FORMAT/PP,FORMAT/GQ,FORMAT/PL",
+      "help": "Format: FIELD/METRIC. e.g. INFO/ABHet"
+    },
+    {
+      "name": "threads",
+      "label": "Number of threads",
+      "class": "string",
+      "optional": true,
+      "default": "4",
+      "help": "Threads x concurrent processes should <= N cores"
+    },
+    {
+      "name": "concurrent_processes",
+      "label": "Number of concurrent processes",
+      "class": "string",
+      "optional": true,
+      "default": "32",
+      "help": "Threads x concurrent processes should <= N cores"
+    }
+  ],
+  "outputSpec": [],
+  "runSpec": {
+    "timeoutPolicy": {
+      "*": {
+        "hours": 48
+      }
+    },
+    "interpreter": "bash",
+    "file": "src/vcf_trimmer.sh",
+    "distribution": "Ubuntu",
+    "release": "20.04",
+    "version": "0"
+  },
+  "access": {
+    "project": "CONTRIBUTE"
+  },
+  "regionalOptions": {
+    "aws:eu-west-2": {
+      "systemRequirements": {
+        "*": {
+          "instanceType": "mem1_ssd1_v2_x36"
+        }
+      }
+    }
+  }
+}
