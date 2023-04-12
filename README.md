@@ -95,3 +95,5 @@ To assist in the throughput of this applet, multiple VCFs will be processed at t
 -ithreads (default: 4) : number of threads bcftools should use when writing compressed output
 ```
 
+You are strongly advised to run these jobs as high-priority to avoid automatic restarting of jobs on the RAP. See [`dx run`](https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities#run) on changing job priority etc.
+
