@@ -60,8 +60,8 @@
       "label": "Number of concurrent processes",
       "class": "string",
       "optional": true,
-      "default": "32",
-      "help": "Threads x concurrent processes should <= N cores"
+      "default": "20",
+      "help": "Maximum number of VCFs to process on worker concurrently. On mem1_ssd1_v2_x36, 20 is the maximum to avoid resource issues that may cause issues."
     }
   ],
   "outputSpec": [],
