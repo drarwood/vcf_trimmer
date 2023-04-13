@@ -89,7 +89,8 @@ dx run vcf_trimmer \
   -y
 ```
 #### Additional parameters
-To assist in the throughput of this applet, multiple VCFs will be processed at the same time on a given workstation. The default instance type is `mem1_ssd1_v2_x36`. Benchmarking has been based on this server type and you should limit the maximum number of concurrent VCFs processed at a time to `20` to avoid resource issues.
+To assist in the throughput of this applet, multiple VCFs will be processed at the same time on a given workstation. 
+The default instance type is `mem1_ssd1_v2_x36`. Benchmarking has been based on this server type for the 200K WGS data and you should limit the maximum number of concurrent VCFs processed at a time to `20` to avoid resource issues. For other datasets, you may need to adjust this limit.
 ```
 -iconcurrent_processes (default: 20) : maximum number of VCFs to process at a given time.
 -ithreads (default: 4) : number of threads bcftools should use when writing compressed output
