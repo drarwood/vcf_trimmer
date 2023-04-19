@@ -40,27 +40,27 @@ You are strongly advised to run these jobs as high-priority to avoid automatic r
 Strings that define inclusion criteria and fields to exclude should be consistent with input expected by bcftools and placed within quotes. See the [bcftools](https://samtools.github.io/bcftools/bcftools.html) manual for more information.
 
 #### Example 1:
-Removing all fields within `FORMAT` except for `GT` and applying inclusion critera of an `AAscore` >= 0.5:
+Removing all fields within `FORMAT` except for `GT` and applying inclusion critera of an `AAscore` > 0.5:
 
 ```
 dx run vcf_trimmer \
   -ivcf_file_list=/path/to/vcf_file_list.txt \
   -ifile_label=trimmed1 \
   -ioutput_dir=/path/to/output/dir \
-  -iqc_thresholds="INFO/AAScore>=0.5" \
+  -iqc_thresholds="INFO/AAScore>0.5" \
   -ifields_to_remove="FORMAT/FT,FORMAT/AD,FORMAT/MD,FORMAT/DP,FORMAT/RA,FORMAT/PP,FORMAT/GQ,FORMAT/PL" \
   -y
 ```
 
 #### Example 2:
-Removing all fields within `FORMAT` except for `GT` and `INFO` except for `AAscore` which must remain as as inclusion critera of an `AAscore` >= 0.5:
+Removing all fields within `FORMAT` except for `GT` and `INFO` except for `AAscore` which must remain as as inclusion critera of an `AAscore` > 0.5:
 
 ```
 dx run vcf_trimmer \
   -ivcf_file_list=/path/to/vcf_file_list.txt \
   -ifile_label=trimmed2 \
   -ioutput_dir=/path/to/output/dir \
-  -iqc_thresholds="INFO/AAScore>=0.5" \
+  -iqc_thresholds="INFO/AAScore>0.5" \
   -ifields_to_remove="FORMAT/FT,FORMAT/AD,FORMAT/MD,FORMAT/DP,FORMAT/RA,FORMAT/PP,FORMAT/GQ,FORMAT/PL,INFO/ABHet,INFO/ABHom,INFO/ABHetMulti,INFO/ABHomMulti,INFO/AC,INFO/AF,INFO/AN,INFO/CR,INFO/CRal,INFO/CRalt,INFO/END,INFO/FEATURE,INFO/GT_ANTI_HAPLOTYPE,INFO/GT_HAPLOTYPE,INFO/GT_ID,INFO/HOMSEQ,INFO/INV3,INFO/INV5,INFO/LEFT_SVINSSEQ,INFO/LOGF,INFO/MaxAAS,INFO/MaxAASR,INFO/MaxAltPP,INFO/MMal,INFO/MMalt,INFO/MQ,INFO/MQalt,INFO/MQSal,INFO/MQsquared,INFO/NCLUSTERS,INFO/NGT,INFO/NHet,INFO/NHomRef,INFO/NHomAlt,INFO/NUM_MERGED_SVS,INFO/OLD_VARIANT_ID,INFO/ORSTART,INFO/OREND,INFO/QD,INFO/QDalt,INFO/PASS_AC,INFO/PASS_AN,INFO/PASS_ratio,INFO/RefLen,INFO/RELATED_SV_ID,INFO/RIGHT_SVINSSEQ,INFO/SB,INFO/SBAlt,INFO/SBF,INFO/SBF1,INFO/SBF2,INFO/SBR,INFO/SBR1,INFO/SBR2,INFO/SDal,INFO/SDalt,INFO/SEQ,INFO/SeqDepth,INFO/SV_ID,INFO/SVINSSEQ,INFO/SVLEN,INFO/SVMODEL,INFO/SVSIZE,INFO/SVTYPE,INFO/VarType" \
   -y
 ```
@@ -78,13 +78,13 @@ dx run vcf_trimmer \
 ```
 
 #### Example 4:
-Applying inclusion critiera of `AAscore` >= 0.5 but do not remove any fields from VCF:
+Applying inclusion critiera of `AAscore` > 0.5 but do not remove any fields from VCF:
 ```
 dx run vcf_trimmer \
   -ivcf_file_list=/path/to/vcf_file_list.txt \
   -ifile_label=trimmed4 \
   -ioutput_dir=/path/to/output/dir \
-  -iqc_thresholds="INFO/AAScore>=0.5" \
+  -iqc_thresholds="INFO/AAScore>0.5" \
   -ifields_to_remove="NA" \
   -y
 ```
