@@ -36,8 +36,8 @@
       "label": "Comma separated list of metric thresholds to apply.",
       "class": "string",
       "optional": true,
-      "default": "INFO/AAScore>=0.5",
-      "help": "Comma separated list of quality control thresholds to apply. Format: Field/MetricComparisonThreshold. e.g. INFO/AAScore>=0.5"
+      "default": "INFO/AAScore>0.5",
+      "help": "Comma separated list of quality control thresholds to apply. Format: Field/MetricComparisonThreshold. e.g. INFO/AAScore>0.5"
     },
     {
       "name": "fields_to_remove",
