@@ -37,7 +37,6 @@ This applet takes one file in as input that simply lists the VCFs to process, on
 ```
 ---
 ### Command line usage
-You are strongly advised to run these jobs as high-priority to avoid automatic restarting of jobs on the RAP. See [`dx run`](https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities#run) on changing job priority etc.
 Strings that define inclusion criteria and fields to exclude should be consistent with input expected by bcftools and placed within quotes. See the [bcftools](https://samtools.github.io/bcftools/bcftools.html) manual for more information.
 
 #### Example 1:
