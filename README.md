@@ -2,7 +2,7 @@
 #### Developed by Andrew Wood. University of Exeter
 
 This applet performs parallel processing of VCFs through [bcftools](https://samtools.github.io/bcftools/bcftools.html). This applet has been designed to reduce file sizes down when required for merging of data by:
-* Splitting multiallelic sites
+* Splitting multiallelic sites (note left-alignment and normalisation not presently set)
 * Removing fields within `INFO` and/or `FORMAT`
 * Applies inclusion quality control thresholding based on field in `INFO`
 
