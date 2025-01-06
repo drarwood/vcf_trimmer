@@ -61,7 +61,7 @@
       "class": "string",
       "optional": true,
       "default": "20",
-      "help": "Maximum number of VCFs to process on worker concurrently. On mem1_ssd1_v2_x36, 20 is the limit to avoid resource issues."
+      "help": "Maximum number of VCFs to process on worker concurrently. On mem2_ssd1_v2_x32, 20 is the limit to avoid resource issues."
     }
   ],
   "outputSpec": [],
@@ -84,7 +84,7 @@
     "aws:eu-west-2": {
       "systemRequirements": {
         "*": {
-          "instanceType": "mem1_ssd1_v2_x36"
+          "instanceType": "mem2_ssd1_v2_x32"
         }
       }
     }
